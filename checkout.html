@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Checkout - TaniShop</title>
+  </head>
+  <body class="font-sans bg-gray-50 text-gray-800">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50 transition-all duration-300">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16">
+          <div class="flex items-center animate-slideInLeft">
+            <div class="flex-shrink-0 flex items-center">
+              <a href="index.html" class="text-2xl font-bold text-farm-green-600">🌾 TaniShop</a>
+            </div>
+          </div>
+
+          <div class="hidden md:flex items-center space-x-6 animate-fadeInUp">
+            <a href="#" class="text-gray-700 hover:text-farm-green-600 transition-colors duration-200">Beranda</a>
+
+            <!-- Dropdown Perikanan -->
+            <div class="relative group">
+              <button class="flex items-center text-gray-700 hover:text-farm-green-600 transition-colors duration-200">
+                Perikanan
+                <svg class="w-4 h-4 ml-1 transform group-hover:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+              <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                <div class="py-1 rounded-md bg-white">
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-farm-green-100 hover:text-farm-green-600">Budidaya</a>
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-farm-green-100 hover:text-farm-green-600">Tangkap</a>
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-farm-green-100 hover:text-farm-green-600">Olahan Ikan</a>
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-farm-green-100 hover:text-farm-green-600">Semua Perikanan</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Dropdown Pertanian -->
+            <div class="relative group">
+              <button class="flex items-center text-gray-700 hover:text-farm-green-600 transition-colors duration-200">
+                Pertanian
+                <svg class="w-4 h-4 ml-1 transform group-hover:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+              <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                <div class="py-1 rounded-md bg-white">
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-farm-green-100 hover:text-farm-green-600">Tanaman Pangan</a>
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-farm-green-100 hover:text-farm-green-600">Hortikultura</a>
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-farm-green-100 hover:text-farm-green-600">Buah-buahan</a>
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-farm-green-100 hover:text-farm-green-600">Sayuran</a>
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-farm-green-100 hover:text-farm-green-600">Semua Pertanian</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Dropdown Peternakan -->
+            <div class="relative group">
+              <button class="flex items-center text-gray-700 hover:text-farm-green-600 transition-colors duration-200">
+                Peternakan
+                <svg class="w-4 h-4 ml-1 transform group-hover:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+              <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                <div class="py-1 rounded-md bg-white">
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-farm-green-100 hover:text-farm-green-600">Peternakan Unggas</a>
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-farm-green-100 hover:text-farm-green-600">Peternakan Susu</a>
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-farm-green-100 hover:text-farm-green-600">Peternakan Kambing</a>
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-farm-green-100 hover:text-farm-green-600">Industri Daging</a>
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-farm-green-100 hover:text-farm-green-600">Semua Peternakan</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Dropdown Perkebunan -->
+            <div class="relative group">
+              <button class="flex items-center text-gray-700 hover:text-farm-green-600 transition-colors duration-200">
+                Perkebunan
+                <svg class="w-4 h-4 ml-1 transform group-hover:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+              <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                <div class="py-1 rounded-md bg-white">
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-farm-green-100 hover:text-farm-green-600">Kelapa Dalam</a>
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-farm-green-100 hover:text-farm-green-600">Kelapa Sawit</a>
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-farm-green-100 hover:text-farm-green-600">Kopi</a>
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-farm-green-100 hover:text-farm-green-600">Karet</a>
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-farm-green-100 hover:text-farm-green-600">Semua Perkebunan</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Dropdown Bahan Dapur -->
+            <div class="relative group">
+              <button class="flex items-center text-gray-700 hover:text-farm-green-600 transition-colors duration-200">
+                Bahan Dapur
+                <svg class="w-4 h-4 ml-1 transform group-hover:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+              <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                <div class="py-1 rounded-md bg-white">
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-farm-green-100 hover:text-farm-green-600">Bumbu Dapur</a>
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-farm-green-100 hover:text-farm-green-600">Rempah-rempah</a>
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-farm-green-100 hover:text-farm-green-600">Tanaman Obat</a>
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-farm-green-100 hover:text-farm-green-600">Semua Bahan Dapur</a>
+                </div>
+              </div>
+            </div>
+
+            <a href="#" class="text-gray-700 hover:text-farm-green-600 transition-colors duration-200">Lainnya</a>
+          </div>
+
+          <div class="flex items-center space-x-4 animate-slideInRight">
+            <div class="relative">
+              <input type="text" placeholder="Cari produk..." class="pl-10 pr-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-farm-green-500 focus:border-transparent transition-all duration-200" />
+              <div class="absolute inset-y-0 left-0 pl-3 flex items-center">
+                <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                </svg>
+              </div>
+            </div>
+            <div class="relative">
+              <a href="cart.html" class="btn p-2 text-gray-700 hover:text-farm-green-600 transition-colors duration-200">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-1.5 6M7 13l-1.5 6m0 0H17"></path>
+                </svg>
+                <span class="absolute -top-2 -right-2 bg-farm-green-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center animate-bounce-slow">2</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="max-w-[1200px] mx-auto my-8 px-4 grid grid-cols-1 md:grid-cols-[1fr_400px] gap-8">
+      <div>
+        <!-- Alamat Pengiriman -->
+        <div class="bg-white rounded-xl p-8 shadow-md mb-8">
+          <h2 class="text-xl mb-6 text-[#2d5016] border-b-2 border-[#90ee90] pb-2 font-bold">📦 Alamat Pengiriman</h2>
+          <form>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="mb-4">
+                <label for="firstName" class="block mb-2 font-semibold text-[#2d5016]">Nama Depan *</label>
+                <input type="text" id="firstName" name="firstName" required class="w-full p-3 border-2 border-gray-200 rounded-lg text-base focus:outline-none focus:border-[#90ee90] transition-colors" />
+              </div>
+              <div class="mb-4">
+                <label for="lastName" class="block mb-2 font-semibold text-[#2d5016]">Nama Belakang *</label>
+                <input type="text" id="lastName" name="lastName" required class="w-full p-3 border-2 border-gray-200 rounded-lg text-base focus:outline-none focus:border-[#90ee90] transition-colors" />
+              </div>
+            </div>
+            <div class="mb-4">
+              <label for="address" class="block mb-2 font-semibold text-[#2d5016]">Alamat Lengkap *</label>
+              <input type="text" id="address" name="address" required class="w-full p-3 border-2 border-gray-200 rounded-lg text-base focus:outline-none focus:border-[#90ee90] transition-colors" />
+            </div>
+            <div class="mb-4">
+              <label for="apartment" class="block mb-2 font-semibold text-[#2d5016]">Apartemen/Unit (Opsional)</label>
+              <input type="text" id="apartment" name="apartment" class="w-full p-3 border-2 border-gray-200 rounded-lg text-base focus:outline-none focus:border-[#90ee90] transition-colors" />
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="mb-4">
+                <label for="city" class="block mb-2 font-semibold text-[#2d5016]">Kota *</label>
+                <input type="text" id="city" name="city" required class="w-full p-3 border-2 border-gray-200 rounded-lg text-base focus:outline-none focus:border-[#90ee90] transition-colors" />
+              </div>
+              <div class="mb-4">
+                <label for="province" class="block mb-2 font-semibold text-[#2d5016]">Provinsi *</label>
+                <select id="province" name="province" required class="w-full p-3 border-2 border-gray-200 rounded-lg text-base focus:outline-none focus:border-[#90ee90] transition-colors">
+                  <option value="">Pilih Provinsi</option>
+                  <option value="jawa-barat">Jawa Barat</option>
+                  <option value="jawa-tengah">Jawa Tengah</option>
+                  <option value="jawa-timur">Jawa Timur</option>
+                  <option value="jakarta">DKI Jakarta</option>
+                  <option value="banten">Banten</option>
+                  <option value="yogyakarta">D.I. Yogyakarta</option>
+                </select>
+              </div>
+            </div>
+            <div class="mb-4">
+              <label for="postalCode" class="block mb-2 font-semibold text-[#2d5016]">Kode Pos *</label>
+              <input type="text" id="postalCode" name="postalCode" required class="w-full p-3 border-2 border-gray-200 rounded-lg text-base focus:outline-none focus:border-[#90ee90] transition-colors" />
+            </div>
+          </form>
+          <div class="bg-[#e8f5e8] p-4 rounded-lg mt-4">
+            <p><strong>📍 Metode Pengiriman:</strong></p>
+            <p>Same-day delivery tersedia untuk wilayah Jabodetabek</p>
+            <p class="text-[#2d5016] font-semibold">🚚 Estimasi pengiriman: 1-2 hari kerja</p>
+          </div>
+        </div>
+
+        <!-- Metode Pengiriman -->
+        <div class="bg-white rounded-xl p-8 shadow-md mb-8">
+          <h2 class="text-xl mb-6 text-[#2d5016] border-b-2 border-[#90ee90] pb-2 font-bold">🚚 Metode Pengiriman</h2>
+          <div class="mt-4">
+            <div class="mb-4">
+              <label for="courier-select" class="block mb-2 font-semibold text-[#2d5016]">Pilih Jasa Kurir</label>
+              <select id="courier-select" name="courier" required class="w-full p-3 border-2 border-gray-200 rounded-lg text-base focus:outline-none focus:border-[#90ee90] transition-colors">
+                <option value="">-- Pilih Jasa Kurir --</option>
+                <option value="jne">JNE Express</option>
+                <option value="jnt">J&T Express</option>
+                <option value="sicepat">SiCepat Express</option>
+                <option value="pos">Pos Indonesia</option>
+                <option value="tiki">TIKI</option>
+                <option value="anteraja">AnterAja</option>
+                <option value="gosend">GoSend (Gojek)</option>
+                <option value="grab">GrabExpress</option>
+              </select>
+            </div>
+            <div class="mt-4 hidden" id="shipping-services">
+              <h4 class="mb-2 text-[#2d5016]">Pilih Layanan Pengiriman</h4>
+              <div id="service-options"></div>
+            </div>
+            <div class="mt-4 hidden" id="shipping-estimate">
+              <div class="bg-gray-50 border border-gray-200 rounded-lg overflow-hidden">
+                <div class="bg-[#2d5016] text-white px-4 py-3">
+                  <h4 class="m-0 text-base">📦 Informasi Pengiriman</h4>
+                </div>
+                <div class="p-4 space-y-2">
+                  <div class="flex justify-between">
+                    <span class="font-medium text-gray-600">📍 Dari:</span>
+                    <span id="origin-info">Gudang TaniShop - Jakarta</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="font-medium text-gray-600">📍 Ke:</span>
+                    <span id="destination-info">Akan diupdate otomatis</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="font-medium text-gray-600">⚖️ Berat Total:</span>
+                    <span id="weight-info">1.05 kg</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="font-medium text-gray-600">⏰ Estimasi:</span>
+                    <span id="eta-info">-</span>
+                  </div>
+                  <div class="flex justify-between border-t pt-2">
+                    <span class="font-medium text-gray-600">💰 Ongkir:</span>
+                    <span id="shipping-cost" class="font-bold text-[#2d5016] text-lg">Rp 0</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="mt-4 hidden" id="insurance-section">
+              <div class="flex items-center justify-between bg-[#fff3cd] border border-[#ffeaa7] p-4 rounded-lg">
+                <div class="flex items-center">
+                  <input type="checkbox" id="shipping-insurance" name="insurance" class="mr-3" />
+                  <label for="shipping-insurance" class="flex flex-col cursor-pointer">
+                    🛡️ Asuransi Pengiriman (Opsional)
+                    <small class="text-gray-600 font-normal mt-1">Perlindungan hingga Rp 500.000 untuk kerusakan/kehilangan</small>
+                  </label>
+                </div>
+                <span class="font-bold text-[#2d5016]">+Rp 3.000</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Metode Pembayaran -->
+        <div class="bg-white rounded-xl p-8 shadow-md mb-8">
+          <h2 class="text-xl mb-6 text-[#2d5016] border-b-2 border-[#90ee90] pb-2 font-bold">💳 Metode Pembayaran</h2>
+          <div class="mb-8">
+            <!-- Virtual Account -->
+            <div class="flex items-center justify-between p-4 border-2 border-gray-200 rounded-lg mb-2 cursor-pointer transition-all hover:border-[#90ee90] hover:bg-[#f0f8f0]">
+              <div class="flex items-center">
+                <input type="radio" name="payment" value="va" id="va" class="mr-4" />
+                <label for="va">🏦 Virtual Account</label>
+              </div>
+              <select class="min-w-[150px] p-2 border border-gray-200 rounded-lg" id="va-banks">
+                <option value="">Pilih Bank</option>
+                <option value="bca" data-fee="0">Bank BCA (Gratis)</option>
+                <option value="mandiri" data-fee="0">Bank Mandiri (Gratis)</option>
+                <option value="bri" data-fee="0">Bank BRI (Gratis)</option>
+                <option value="bni" data-fee="0">Bank BNI (Gratis)</option>
+                <option value="cimb" data-fee="0">CIMB Niaga (Gratis)</option>
+                <option value="bsi" data-fee="0">Bank Syariah Indonesia (Gratis)</option>
+                <option value="permata" data-fee="2500">Bank Permata (Rp 2.500)</option>
+                <option value="danamon" data-fee="2500">Bank Danamon (Rp 2.500)</option>
+              </select>
+            </div>
+            <!-- ...payment options lain, samakan dengan pola di atas... -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Ringkasan Pesanan -->
+      <div class="bg-white rounded-xl p-8 shadow-md h-fit">
+        <h2 class="text-xl mb-6 text-[#2d5016] border-b-2 border-[#90ee90] pb-2 font-bold">📋 Ringkasan Pesanan</h2>
+        <div class="flex gap-4 p-4 border-b border-gray-200 mb-4">
+          <div class="w-20 h-20 bg-[#f0f8f0] rounded-lg flex items-center justify-center text-2xl">🥕</div>
+          <div>
+            <h4 class="text-[#2d5016] mb-2">Wortel Organik Premium</h4>
+            <p class="text-gray-600 text-sm">500 Gram × 1</p>
+            <p class="text-[#2d5016] font-bold mt-2">Rp 15.000</p>
+          </div>
+        </div>
+        <!-- ...produk lain, samakan pattern... -->
+        <div class="bg-[#f0f8f0] rounded-lg p-4 mb-4 border border-dashed border-[#90ee90]">
+          <p class="font-semibold mb-2">💎 Kode Promo atau Voucher</p>
+          <div class="flex gap-2">
+            <input type="text" placeholder="Masukkan kode promo" class="flex-1 p-3 border-2 border-gray-200 rounded-lg" />
+            <button type="button" class="bg-[#90ee90] px-4 py-2 rounded-lg">Terapkan</button>
+          </div>
+        </div>
+        <div class="flex justify-between mb-2 py-2">
+          <span>Subtotal (3 item)</span>
+          <span>Rp 63.000</span>
+        </div>
+        <div class="flex justify-between mb-2 py-2">
+          <span>Pajak</span>
+          <span>Rp 0</span>
+        </div>
+        <div class="flex justify-between mb-2 py-2">
+          <span>Ongkos Kirim</span>
+          <span>Gratis</span>
+        </div>
+        <div class="flex justify-between mb-2 py-2" id="payment-fee-row" style="display: none">
+          <span>Biaya Pembayaran</span>
+          <span id="payment-fee-amount">Rp 0</span>
+        </div>
+        <div class="flex justify-between mb-2 py-2">
+          <span>Diskon</span>
+          <span class="text-[#28a745]">-Rp 3.000</span>
+        </div>
+        <div class="flex justify-between font-bold text-xl text-[#2d5016] mt-4 pt-2 border-t-2 border-[#2d5016]">
+          <span>Total</span>
+          <span id="total-amount">Rp 60.000</span>
+        </div>
+        <button class="w-full bg-[#2d5016] text-white py-4 rounded-lg text-lg font-semibold hover:bg-[#1a3009] transition-colors mt-4">🛒 Proses Pesanan</button>
+        <div class="mt-4 text-center text-sm text-gray-600">
+          <p>🔒 Pembayaran aman dengan enkripsi SSL</p>
+          <p>📞 Bantuan: +62 800-1234-5678</p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let currentPaymentFee = 0;
+      const baseTotal = 60000;
+
+      function selectPayment(type) {
+        // Reset all payment options
+        document.querySelectorAll(".payment-option").forEach((option) => {
+          option.classList.remove("selected");
+        });
+
+        // Hide all payment details
+        document.querySelectorAll(".payment-details").forEach((detail) => {
+          detail.classList.remove("show");
+        });
+
+        // Select current payment option
+        document.querySelector(`input[value="${type}"]`).checked = true;
+        document.querySelector(`input[value="${type}"]`).closest(".payment-option").classList.add("selected");
+
+        // Show relevant payment details
+        const detailsElement = document.getElementById(`${type}-details`);
+        if (detailsElement) {
+          detailsElement.classList.add("show");
+        }
+
+        // Reset fee if switching payment types
+        updatePaymentFee(type);
+      }
+
+      function updatePaymentFee(paymentType) {
+        let fee = 0;
+        let feeText = "";
+
+        if (paymentType === "va") {
+          const selected = document.getElementById("va-banks").value;
+          const option = document.querySelector(`#va-banks option[value="${selected}"]`);
+          if (option) {
+            fee = parseInt(option.dataset.fee) || 0;
+            feeText = `Biaya admin: ${fee === 0 ? "Gratis" : "Rp " + fee.toLocaleString("id-ID")}`;
+          }
+        } else if (paymentType === "transfer") {
+          const selected = document.getElementById("transfer-banks").value;
+          const option = document.querySelector(`#transfer-banks option[value="${selected}"]`);
+          if (option) {
+            fee = parseInt(option.dataset.fee) || 0;
+            feeText = `Biaya transfer antar bank: ${fee === 0 ? "Gratis" : "Rp " + fee.toLocaleString("id-ID")}`;
+          }
+        } else if (paymentType === "ewallet") {
+          const selected = document.getElementById("ewallet-providers").value;
+          const option = document.querySelector(`#ewallet-providers option[value="${selected}"]`);
+          if (option) {
+            fee = parseInt(option.dataset.fee) || 0;
+            feeText = `Biaya transaksi: ${fee === 0 ? "Gratis" : "Rp " + fee.toLocaleString("id-ID")}`;
+          }
+        }
+
+        // Update fee display
+        currentPaymentFee = fee;
+        const feeRow = document.getElementById("payment-fee-row");
+        const feeAmount = document.getElementById("payment-fee-amount");
+
+        if (fee > 0) {
+          feeRow.style.display = "flex";
+          feeAmount.textContent = "Rp " + fee.toLocaleString("id-ID");
+        } else {
+          feeRow.style.display = "none";
+        }
+
+        // Update fee info in payment details
+        const feeInfoElement = document.getElementById(`${paymentType}-fee-info`);
+        if (feeInfoElement) {
+          feeInfoElement.textContent = feeText;
+        }
+
+        // Update total
+        updateTotal();
+      }
+
+      function updateTotal() {
+        const newTotal = baseTotal + currentPaymentFee;
+        document.getElementById("total-amount").textContent = "Rp " + newTotal.toLocaleString("id-ID");
+      }
+
+      function processOrder() {
+        // Validasi form alamat
+        const requiredFields = document.querySelectorAll("input[required], select[required]");
+        let isValid = true;
+
+        requiredFields.forEach((field) => {
+          if (!field.value.trim()) {
+            field.style.borderColor = "#e74c3c";
+            isValid = false;
+          } else {
+            field.style.borderColor = "#e0e0e0";
+          }
+        });
+
+        // Validasi metode pembayaran
+        const selectedPayment = document.querySelector('input[name="payment"]:checked');
+        if (!selectedPayment) {
+          alert("❌ Silakan pilih metode pembayaran");
+          return;
+        }
+
+        // Validasi dropdown berdasarkan metode pembayaran
+        if (selectedPayment.value === "va") {
+          const selectedBank = document.getElementById("va-banks").value;
+          if (!selectedBank) {
+            alert("❌ Silakan pilih bank untuk Virtual Account");
+            return;
+          }
+        } else if (selectedPayment.value === "transfer") {
+          const selectedBank = document.getElementById("transfer-banks").value;
+          if (!selectedBank) {
+            alert("❌ Silakan pilih bank untuk Transfer");
+            return;
+          }
+        } else if (selectedPayment.value === "ewallet") {
+          const selectedProvider = document.getElementById("ewallet-providers").value;
+          if (!selectedProvider) {
+            alert("❌ Silakan pilih provider E-Wallet");
+            return;
+          }
+        } else if (selectedPayment.value === "card") {
+          // Validasi form kartu kredit
+          const cardFields = ["cardNumber", "cardName", "expiry", "cvv"];
+          let cardValid = true;
+          cardFields.forEach((fieldId) => {
+            const field = document.getElementById(fieldId);
+            if (!field.value.trim()) {
+              field.style.borderColor = "#e74c3c";
+              cardValid = false;
+            }
+          });
+          if (!cardValid) {
+            alert("❌ Mohon lengkapi semua data kartu kredit");
+            return;
+          }
+        }
+
+        if (isValid) {
+          const paymentMethod = selectedPayment.value;
+          let message = "🎉 Pesanan berhasil diproses!";
+
+          if (paymentMethod === "va") {
+            const bank = document.getElementById("va-banks").selectedOptions[0].text;
+            message += `\n\nNomor Virtual Account ${bank} akan dikirim ke email dan WhatsApp Anda.`;
+          } else if (paymentMethod === "transfer") {
+            const bank = document.getElementById("transfer-banks").selectedOptions[0].text;
+            message += `\n\nInformasi rekening ${bank} akan dikirim ke email Anda.`;
+          } else if (paymentMethod === "ewallet") {
+            const provider = document.getElementById("ewallet-providers").selectedOptions[0].text;
+            message += `\n\nQR Code ${provider} akan ditampilkan untuk pembayaran.`;
+          } else if (paymentMethod === "cod") {
+            message += "\n\nKurir akan menghubungi Anda untuk konfirmasi pengiriman.";
+          } else if (paymentMethod === "card") {
+            message += "\n\nPembayaran kartu sedang diproses.";
+          }
+
+          alert(message);
+          // Di sini bisa ditambahkan logika untuk mengirim data ke server
+        } else {
+          alert("❌ Mohon lengkapi semua field yang wajib diisi");
+        }
+      }
+
+      // Auto-format nomor kartu
+      document.getElementById("cardNumber")?.addEventListener("input", function (e) {
+        let value = e.target.value.replace(/\s/g, "");
+        let formattedValue = value.replace(/(.{4})/g, "$1 ").trim();
+        if (formattedValue.length > 19) {
+          formattedValue = formattedValue.substr(0, 19);
+        }
+        e.target.value = formattedValue;
+      });
+
+      // Auto-format tanggal kadaluarsa
+      document.getElementById("expiry")?.addEventListener("input", function (e) {
+        let value = e.target.value.replace(/\D/g, "");
+        if (value.length >= 2) {
+          value = value.substr(0, 2) + "/" + value.substr(2, 2);
+        }
+        e.target.value = value;
+      });
+
+      // Auto-format CVV (hanya angka)
+      document.getElementById("cvv")?.addEventListener("input", function (e) {
+        e.target.value = e.target.value.replace(/\D/g, "");
+      });
+
+      // Stop dropdown events from triggering parent click
+      document.querySelectorAll(".payment-dropdown").forEach((dropdown) => {
+        dropdown.addEventListener("click", function (e) {
+          e.stopPropagation();
+        });
+      });
+
+      // Data layanan pengiriman untuk setiap kurir
+      const shippingData = {
+        jne: {
+          name: "JNE Express",
+          services: [
+            { id: "oke", name: "JNE OKE", desc: "Ekonomis 2-3 hari", price: 9000, eta: "2-3 hari", type: "regular" },
+            { id: "reg", name: "JNE REG", desc: "Reguler 1-2 hari", price: 12000, eta: "1-2 hari", type: "regular" },
+            { id: "yes", name: "JNE YES", desc: "Yakin Esok Sampai", price: 18000, eta: "1 hari", type: "express" },
+          ],
+        },
+        jnt: {
+          name: "J&T Express",
+          services: [
+            { id: "eco", name: "J&T ECO", desc: "Ekonomis 3-5 hari", price: 8000, eta: "3-5 hari", type: "regular" },
+            { id: "ez", name: "J&T EZ", desc: "Reguler 2-3 hari", price: 11000, eta: "2-3 hari", type: "regular" },
+            { id: "super", name: "J&T Super", desc: "Express 1-2 hari", price: 15000, eta: "1-2 hari", type: "express" },
+          ],
+        },
+        sicepat: {
+          name: "SiCepat Express",
+          services: [
+            { id: "siunt", name: "SiCepat SIUNT", desc: "Termurah 2-3 hari", price: 9500, eta: "2-3 hari", type: "regular" },
+            { id: "reg", name: "SiCepat REG", desc: "Reguler 1-2 hari", price: 11500, eta: "1-2 hari", type: "regular" },
+            { id: "best", name: "SiCepat BEST", desc: "Besok Sampai", price: 16000, eta: "1 hari", type: "express" },
+          ],
+        },
+        pos: {
+          name: "Pos Indonesia",
+          services: [
+            { id: "reguler", name: "Pos Reguler", desc: "Paket Kilat Khusus", price: 11000, eta: "2-4 hari", type: "regular" },
+            { id: "nextday", name: "Pos NextDay", desc: "Express Nextday", price: 24000, eta: "1 hari", type: "express" },
+            { id: "sameday", name: "Pos SameDay", desc: "Same Day Delivery", price: 35000, eta: "Hari ini", type: "sameday" },
+          ],
+        },
+        tiki: {
+          name: "TIKI",
+          services: [
+            { id: "eco", name: "TIKI ECO", desc: "Ekonomis", price: 10000, eta: "3-4 hari", type: "regular" },
+            { id: "reg", name: "TIKI REG", desc: "Reguler", price: 13000, eta: "2-3 hari", type: "regular" },
+            { id: "ons", name: "TIKI ONS", desc: "One Night Service", price: 20000, eta: "1 hari", type: "express" },
+          ],
+        },
+        anteraja: {
+          name: "AnterAja",
+          services: [
+            { id: "reguler", name: "AnterAja Reguler", desc: "Standar", price: 10500, eta: "2-3 hari", type: "regular" },
+            { id: "nextday", name: "AnterAja Next Day", desc: "Esok Sampai", price: 17000, eta: "1 hari", type: "express" },
+            { id: "sameday", name: "AnterAja Same Day", desc: "Hari ini Sampai", price: 30000, eta: "Hari ini", type: "sameday" },
+          ],
+        },
+        gosend: {
+          name: "GoSend",
+          services: [
+            { id: "instant", name: "GoSend Instant", desc: "Langsung antar", price: 25000, eta: "1-2 jam", type: "instant" },
+            { id: "sameday", name: "GoSend SameDay", desc: "Hari ini sampai", price: 18000, eta: "4-6 jam", type: "sameday" },
+          ],
+        },
+        grab: {
+          name: "GrabExpress",
+          services: [
+            { id: "instant", name: "GrabExpress Instant", desc: "Langsung kirim", price: 22000, eta: "1-2 jam", type: "instant" },
+            { id: "sameday", name: "GrabExpress SameDay", desc: "Hari ini juga", price: 16000, eta: "3-5 jam", type: "sameday" },
+          ],
+        },
+      };
+
+      let selectedShippingCost = 0;
+      let selectedInsuranceCost = 0;
+
+      function updateShippingServices() {
+        const courierSelect = document.getElementById("courier-select");
+        const servicesDiv = document.getElementById("shipping-services");
+        const serviceOptionsDiv = document.getElementById("service-options");
+
+        if (!courierSelect.value) {
+          servicesDiv.style.display = "none";
+          document.getElementById("shipping-estimate").style.display = "none";
+          document.getElementById("insurance-section").style.display = "none";
+          return;
+        }
+
+        const courier = shippingData[courierSelect.value];
+        serviceOptionsDiv.innerHTML = "";
+
+        courier.services.forEach((service) => {
+          const badge = getBadge(service.type);
+          const serviceHTML = `
+          <div class="service-option" onclick="selectShippingService('${service.id}', ${service.price}, '${service.eta}', '${courier.name}', '${service.name}')">
+              <div class="service-info">
+                  <input type="radio" name="shipping-service" value="${service.id}" id="${service.id}">
+                  <div class="courier-logo">${courier.name.substring(0, 3).toUpperCase()}</div>
+                  <div class="service-details">
+                      <h5>${service.name}${badge}</h5>
+                      <small>${service.desc}</small>
+                  </div>
+              </div>
+              <div class="service-pricing">
+                  <div class="service-price">${service.price === 0 ? '<span class="free-shipping">GRATIS</span>' : "Rp " + service.price.toLocaleString("id-ID")}</div>
+                  <div class="service-eta">${service.eta}</div>
+              </div>
+          </div>
+      `;
+          serviceOptionsDiv.innerHTML += serviceHTML;
+        });
+
+        servicesDiv.style.display = "block";
+        updateDestinationInfo();
+      }
+
+      function getBadge(type) {
+        switch (type) {
+          case "instant":
+            return '<span class="same-day-badge">INSTANT</span>';
+          case "sameday":
+            return '<span class="same-day-badge">SAME DAY</span>';
+          case "express":
+            return '<span class="express-badge">EXPRESS</span>';
+          case "regular":
+            return '<span class="regular-badge">REGULER</span>';
+          default:
+            return "";
+        }
+      }
+
+      function selectShippingService(serviceId, price, eta, courierName, serviceName) {
+        // Reset all selections
+        document.querySelectorAll(".service-option").forEach((option) => {
+          option.classList.remove("selected");
+        });
+
+        // Select current option
+        event.currentTarget.classList.add("selected");
+        document.getElementById(serviceId).checked = true;
+
+        // Update shipping cost
+        selectedShippingCost = price;
+
+        // Update estimate display
+        document.getElementById("eta-info").textContent = eta;
+        document.getElementById("shipping-cost").textContent = price === 0 ? "GRATIS" : "Rp " + price.toLocaleString("id-ID");
+
+        // Show estimate and insurance sections
+        document.getElementById("shipping-estimate").style.display = "block";
+        document.getElementById("insurance-section").style.display = "block";
+
+        // Update total cost
+        updateTotalWithShipping();
+
+        // Show notification for same day/instant delivery
+        if (eta.includes("jam") || eta.includes("Hari ini")) {
+          showShippingNotification(serviceName, eta);
+        }
+      }
+
+      function updateDestinationInfo() {
+        const cityInput = document.getElementById("city");
+        if (cityInput && cityInput.value) {
+          document.getElementById("destination-info").textContent = cityInput.value;
+        }
+      }
+
+      function updateInsuranceCost() {
+        const insuranceCheckbox = document.getElementById("shipping-insurance");
+        selectedInsuranceCost = insuranceCheckbox.checked ? 3000 : 0;
+        updateTotalWithShipping();
+      }
+
+      function updateTotalWithShipping() {
+        const baseTotal = 60000; // Total sebelumnya
+        const paymentFee = currentPaymentFee || 0;
+        const newTotal = baseTotal + selectedShippingCost + selectedInsuranceCost + paymentFee;
+
+        // Update display ongkir di ringkasan
+        const shippingRow = document.querySelector(".summary-row:nth-child(3) span:last-child");
+        if (shippingRow) {
+          shippingRow.textContent = selectedShippingCost === 0 ? "Gratis" : "Rp " + selectedShippingCost.toLocaleString("id-ID");
+        }
+
+        // Add insurance row if needed
+        let insuranceRow = document.getElementById("insurance-row");
+        if (selectedInsuranceCost > 0) {
+          if (!insuranceRow) {
+            insuranceRow = document.createElement("div");
+            insuranceRow.className = "summary-row";
+            insuranceRow.id = "insurance-row";
+            insuranceRow.innerHTML = '<span>Asuransi</span><span id="insurance-amount">Rp ' + selectedInsuranceCost.toLocaleString("id-ID") + "</span>";
+            document.querySelector(".summary-row.total").parentNode.insertBefore(insuranceRow, document.querySelector(".summary-row.total"));
+          } else {
+            document.getElementById("insurance-amount").textContent = "Rp " + selectedInsuranceCost.toLocaleString("id-ID");
+          }
+        } else if (insuranceRow) {
+          insuranceRow.remove();
+        }
+
+        // Update total
+        document.getElementById("total-amount").textContent = "Rp " + newTotal.toLocaleString("id-ID");
+      }
+
+      function showShippingNotification(serviceName, eta) {
+        // Create temporary notification
+        const notification = document.createElement("div");
+        notification.style.cssText = `
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #2d5016;
+      color: white;
+      padding: 1rem;
+      border-radius: 8px;
+      z-index: 1000;
+      max-width: 300px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  `;
+        notification.innerHTML = `
+      <strong>🚀 ${serviceName}</strong><br>
+      <small>Estimasi pengiriman: ${eta}<br>
+      Pastikan alamat sudah benar!</small>
+  `;
+
+        document.body.appendChild(notification);
+
+        setTimeout(() => {
+          notification.remove();
+        }, 5000);
+      }
+
+      // Auto-update destination when city field changes
+      document.addEventListener("DOMContentLoaded", function () {
+        const cityInput = document.getElementById("city");
+        if (cityInput) {
+          cityInput.addEventListener("input", updateDestinationInfo);
+        }
+      });
+
+      // Update validation untuk termasuk shipping
+      function processOrder() {
+        // ... existing validation code ...
+
+        // Validasi metode pengiriman
+        const selectedShipping = document.querySelector('input[name="shipping-service"]:checked');
+        if (!selectedShipping) {
+          alert("❌ Silakan pilih metode pengiriman");
+          return;
+        }
+
+        // ... rest of existing validation ...
+      }
+    </script>
+  </body>
+</html>
